@@ -3,6 +3,7 @@ import com.example.agerasimenko.demoproject.Versions
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -27,12 +28,9 @@ dependencies {
     implementation ProjectDependences.constrainLayout
     testImplementation ProjectDependences.junit
     implementation ProjectDependences.kotlin
-    implementation ProjectDependences.dagger
-    annotationProcessor ProjectDependences.daggerCompiler
-    implementation ProjectDependences.daggerAndroid
-    implementation ProjectDependences.daggerAndroidSupport
-    annotationProcessor ProjectDependences.daggerAnnotationProcessor
 
+    implementation ProjectDependences.dagger
+    kapt ProjectDependences.daggerCompiler
 }
 repositories {
     mavenCentral()
