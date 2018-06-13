@@ -31,6 +31,11 @@ dependencies {
 
     implementation ProjectDependences.dagger
     kapt ProjectDependences.daggerCompiler
+
+    implementation ProjectDependences.retrofit
+    implementation ProjectDependences.okHttp3
+    implementation ProjectDependences.gsonConverter
+    implementation ProjectDependences.retrofitRxAdapter
 }
 repositories {
     mavenCentral()

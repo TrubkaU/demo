@@ -15,6 +15,10 @@ object ProjectDependences {
     const val junit = "junit:junit:${Versions.junit}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val okHttp3 = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp3}"
+    const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
 }
 
 
@@ -30,4 +34,6 @@ object Versions {
     const val constrain = "1.1.1"
     const val junit = "4.12"
     const val dagger = "2.15"
+    const val retrofit = "2.4.0"
+    const val okHttp3 = "3.10.0"
 }
