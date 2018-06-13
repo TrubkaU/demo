@@ -27,6 +27,11 @@ dependencies {
     implementation ProjectDependences.constrainLayout
     testImplementation ProjectDependences.junit
     implementation ProjectDependences.kotlin
+    implementation ProjectDependences.dagger
+    annotationProcessor ProjectDependences.daggerCompiler
+    implementation ProjectDependences.daggerAndroid
+    implementation ProjectDependences.daggerAndroidSupport
+    annotationProcessor ProjectDependences.daggerAnnotationProcessor
 
 }
 repositories {

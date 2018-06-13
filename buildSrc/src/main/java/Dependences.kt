@@ -13,6 +13,11 @@ object ProjectDependences {
     const val appCompatV7 = "com.android.support:appcompat-v7:${Versions.appCompatV7}"
     const val constrainLayout = "com.android.support.constraint:constraint-layout:${Versions.constrain}"
     const val junit = "junit:junit:${Versions.junit}"
+    const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
+    const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"
+    const val daggerAnnotationProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+    const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
 }
 
 
@@ -27,4 +32,5 @@ object Versions {
     const val appCompatV7 = "27.1.1"
     const val constrain = "1.1.1"
     const val junit = "4.12"
+    const val dagger = "2.10"
 }
