@@ -3,7 +3,7 @@ package com.example.agerasimenko.demoproject
 import android.app.Application
 import com.example.agerasimenko.demoproject.di.modules.AppModule
 import com.example.agerasimenko.demoproject.di.components.ApplicationComponent
-import com.example.agerasimenko.demoproject.di.DaggerApplicationComponent
+import com.example.agerasimenko.demoproject.di.components.DaggerApplicationComponent
 
 
 class MainApp: Application() {
