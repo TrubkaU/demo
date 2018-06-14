@@ -26,13 +26,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation ProjectDependences.appCompatV7
-    implementation ProjectDependences.constrainLayout
     testImplementation ProjectDependences.junit
     implementation ProjectDependences.kotlin
 
     implementation ProjectDependences.dagger
     kapt ProjectDependences.daggerCompiler
+
+    implementation ProjectDependences.firestore
 }
 repositories {
     mavenCentral()
 }
+
+apply plugin: 'com.google.gms.google-services'
