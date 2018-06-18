@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.agerasimenko.demoproject.di.modules.AppModule
 import com.example.agerasimenko.demoproject.di.components.ApplicationComponent
 import com.example.agerasimenko.demoproject.di.components.DaggerApplicationComponent
+import com.example.agerasimenko.demoproject.di.modules.FirestoreModule
 
 
 class MainApp: Application() {
@@ -19,6 +20,7 @@ class MainApp: Application() {
     private fun initAppComponent() {
         appComponent = DaggerApplicationComponent.builder()
                 .appModule(AppModule(this))
+                .firestoreModule(FirestoreModule(applicationContext))
                 .build()
     }
 
