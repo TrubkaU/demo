@@ -8,8 +8,17 @@
     <Button
         android:id="@+id/get_data_fb"
         android:layout_centerInParent="true"
-        android:text="Get"
+        android:text="Start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_centerInParent="true"
+        android:text="Stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/get_data_fb"
+        />
 
 </RelativeLayout>
