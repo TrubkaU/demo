@@ -19,6 +19,7 @@ object ProjectDependences {
     const val okHttp3 = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp3}"
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
+    const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
 }
 
 
@@ -36,4 +37,5 @@ object Versions {
     const val dagger = "2.15"
     const val retrofit = "2.4.0"
     const val okHttp3 = "3.10.0"
+    const val rxAndroid = "2.0.2"
 }

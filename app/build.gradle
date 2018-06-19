@@ -37,6 +37,8 @@ dependencies {
     implementation ProjectDependences.okHttp3
     implementation ProjectDependences.gsonConverter
     implementation ProjectDependences.retrofitRxAdapter
+
+    implementation ProjectDependences.rxAndroid
 }
 repositories {
     mavenCentral()
