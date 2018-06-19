@@ -16,6 +16,7 @@ object ProjectDependences {
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     const val stetho = "com.facebook.stetho:stetho-okhttp:${Versions.stetho}"
+    const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
 }
 
 
@@ -32,4 +33,5 @@ object Versions {
     const val junit = "4.12"
     const val dagger = "2.15"
     const val stetho = "1.5.0"
+    const val rxAndroid = "2.0.2"
 }

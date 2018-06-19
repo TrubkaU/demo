@@ -34,6 +34,8 @@ dependencies {
     kapt ProjectDependences.daggerCompiler
 
     implementation ProjectDependences.stetho
+
+    implementation ProjectDependences.rxAndroid
 }
 repositories {
     mavenCentral()
