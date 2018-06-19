@@ -2,6 +2,7 @@ package com.example.agerasimenko.demoproject.di.modules
 
 import com.example.agerasimenko.demoproject.BuildConfig
 import com.example.agerasimenko.demoproject.data.retrofit.AuthInterceptor
+import com.example.agerasimenko.demoproject.data.retrofit.ApiInterface
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -11,7 +12,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-const val URL = "http://tut.by"
+const val URL = "http://www.nbrb.by/API/ExRates/"
 
 @Module
 class NetworkModule {
@@ -40,4 +41,10 @@ class NetworkModule {
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build()
 
+
+    @Singleton
+    @Provides
+    fun provideApiInterface(retrofit: Retrofit): ApiInterface {
+        return retrofit.create(ApiInterface::class.java)
+    }
 }
