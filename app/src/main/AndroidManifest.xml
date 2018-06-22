@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <service android:name=".domain.SimpleService"/>
+        <service android:name=".domain.BindService"/>
     </application>
 
 </manifest>
