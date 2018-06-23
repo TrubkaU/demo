@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.os.IBinder
 import com.example.agerasimenko.demoproject.R
 import com.example.agerasimenko.demoproject.domain.BindService
+import com.example.agerasimenko.demoproject.domain.MessageService
 import com.example.agerasimenko.demoproject.domain.SimpleService
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -46,6 +47,10 @@ class MainActivity : AppCompatActivity() {
 
         button_run_bind_service.setOnClickListener {
             isRun = bindService(Intent(this, BindService::class.java), serviceConnection, Context.BIND_AUTO_CREATE)
+        }
+
+        button_run_intent_service.setOnClickListener {
+            startService(Intent(this, MessageService::class.java))
         }
     }
 

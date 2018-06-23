@@ -28,5 +28,14 @@
         android:layout_toRightOf="@+id/button_run"
         android:text="BIND"/>
 
+    <Button
+        android:id="@+id/button_run_intent_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/button_run"
+        android:text="INTENT SERVICE"/>
+
+
 
 </RelativeLayout>
