@@ -19,6 +19,7 @@
         </activity>
         <service android:name=".domain.SimpleService"/>
         <service android:name=".domain.BindService"/>
+        <service android:name=".domain.MessageService"/>
     </application>
 
 </manifest>
