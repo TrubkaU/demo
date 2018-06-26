@@ -15,6 +15,7 @@ object ProjectDependences {
     const val junit = "junit:junit:${Versions.junit}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
+    const val stetho = "com.facebook.stetho:stetho-okhttp:${Versions.stetho}"
 }
 
 
@@ -30,4 +31,5 @@ object Versions {
     const val constrain = "1.1.1"
     const val junit = "4.12"
     const val dagger = "2.15"
+    const val stetho = "1.5.0"
 }
