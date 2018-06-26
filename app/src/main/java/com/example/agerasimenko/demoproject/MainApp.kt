@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.agerasimenko.demoproject.di.modules.AppModule
 import com.example.agerasimenko.demoproject.di.components.ApplicationComponent
 import com.example.agerasimenko.demoproject.di.components.DaggerApplicationComponent
+import com.facebook.stetho.Stetho
 
 
 class MainApp: Application() {
@@ -14,6 +15,7 @@ class MainApp: Application() {
     override fun onCreate() {
         super.onCreate()
         initAppComponent()
+        Stetho.initializeWithDefaults(this)
     }
 
     private fun initAppComponent() {

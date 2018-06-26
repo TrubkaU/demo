@@ -39,6 +39,7 @@ dependencies {
     implementation ProjectDependences.retrofitRxAdapter
 
     implementation ProjectDependences.rxAndroid
+    implementation ProjectDependences.stetho
 }
 repositories {
     mavenCentral()

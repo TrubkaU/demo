@@ -20,6 +20,7 @@ object ProjectDependences {
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
+    const val stetho = "com.facebook.stetho:stetho-okhttp:${Versions.stetho}"
 }
 
 
@@ -38,4 +39,5 @@ object Versions {
     const val retrofit = "2.4.0"
     const val okHttp3 = "3.10.0"
     const val rxAndroid = "2.0.2"
+    const val stetho = "1.5.0"
 }
