@@ -3,6 +3,7 @@ package com.example.agerasimenko.demoproject.di.modules
 import com.example.agerasimenko.demoproject.BuildConfig
 import com.example.agerasimenko.demoproject.data.retrofit.AuthInterceptor
 import com.example.agerasimenko.demoproject.data.retrofit.ApiInterface
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -28,6 +29,7 @@ class NetworkModule {
                 }
             }
                     .addInterceptor(AuthInterceptor())
+                    .addNetworkInterceptor(StethoInterceptor())
                     .build()
 
 

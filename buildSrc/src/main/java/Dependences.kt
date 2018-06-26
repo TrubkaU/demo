@@ -21,6 +21,7 @@ object ProjectDependences {
     const val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
     const val stetho = "com.facebook.stetho:stetho-okhttp:${Versions.stetho}"
+    const val stethoInterceptor = "com.facebook.stetho:stetho-okhttp3:${Versions.stethoInterceptor}"
 }
 
 
@@ -40,4 +41,5 @@ object Versions {
     const val okHttp3 = "3.10.0"
     const val rxAndroid = "2.0.2"
     const val stetho = "1.5.0"
+    const val stethoInterceptor = "1.4.2"
 }
