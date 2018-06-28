@@ -17,6 +17,7 @@ object ProjectDependences {
     const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     const val stetho = "com.facebook.stetho:stetho-okhttp:${Versions.stetho}"
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
+    const val rx = "io.reactivex.rxjava2:rxjava:${Versions.rxAndroid}"
 }
 
 

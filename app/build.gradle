@@ -35,6 +35,7 @@ dependencies {
 
     implementation ProjectDependences.stetho
 
+    implementation ProjectDependences.rx
     implementation ProjectDependences.rxAndroid
 }
 repositories {
