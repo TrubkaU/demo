@@ -37,6 +37,8 @@ dependencies {
 
     implementation ProjectDependences.rx
     implementation ProjectDependences.rxAndroid
+
+    implementation ProjectDependences.reactiveStream
 }
 repositories {
     mavenCentral()

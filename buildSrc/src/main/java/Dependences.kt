@@ -18,6 +18,7 @@ object ProjectDependences {
     const val stetho = "com.facebook.stetho:stetho-okhttp:${Versions.stetho}"
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
     const val rx = "io.reactivex.rxjava2:rxjava:${Versions.rxAndroid}"
+    const val reactiveStream = "android.arch.lifecycle:reactivestreams:${Versions.lifeCycle}"
 }
 
 
@@ -35,4 +36,5 @@ object Versions {
     const val dagger = "2.15"
     const val stetho = "1.5.0"
     const val rxAndroid = "2.0.2"
+    const val lifeCycle = "1.1.1"
 }
