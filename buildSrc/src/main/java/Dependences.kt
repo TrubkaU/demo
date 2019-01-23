@@ -4,6 +4,7 @@ package com.example.agerasimenko.demoproject
 object PluginDependences {
     const val android = "com.android.tools.build:gradle:${Versions.gradleAndroidPlugin}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+    const val jacoco = "com.dicedmelon.gradle:jacoco-android:${Versions.jacocoAndroid}"
 }
 
 
@@ -28,6 +29,7 @@ object ProjectDependences {
 object Versions {
     const val gradleAndroidPlugin = "3.1.3"
     const val kotlin = "1.2.41"
+    const val jacocoAndroid = "0.1.2"
     const val minSdk = 15
     const val targetSdk =  27
     const val code = 1
@@ -42,4 +44,5 @@ object Versions {
     const val rxAndroid = "2.0.2"
     const val stetho = "1.5.0"
     const val stethoInterceptor = "1.4.2"
+    const val jacoco = "0.8.2"
 }
