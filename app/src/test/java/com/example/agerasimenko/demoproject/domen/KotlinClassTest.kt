@@ -4,16 +4,16 @@ import org.junit.Test
 
 import org.junit.Assert.*
 
-class HelloWorldTest {
+class KotlinClassTest {
 
     @Test
     fun getHelloWorld() {
 
-        assertEquals(HELLO_WORLD, HelloWorld.getHelloWorld())
+        assertEquals(HELLO_WORLD, KotlinClass.getHelloWorld())
     }
 
     @Test
     fun getIntHelloWorld() {
-        assertEquals(72, HelloWorld.getIntHelloWorld())
+        assertEquals(72, KotlinClass.getIntHelloWorld())
     }
 }

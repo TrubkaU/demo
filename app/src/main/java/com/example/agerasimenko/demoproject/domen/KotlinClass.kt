@@ -2,7 +2,7 @@ package com.example.agerasimenko.demoproject.domen
 
 const val HELLO_WORLD = "Hello world"
 
-object HelloWorld {
+object KotlinClass {
 
     fun getHelloWorld() = HELLO_WORLD
 
