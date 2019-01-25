@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply from: 'jacoco.gradle'
+apply plugin: 'org.sonarqube'
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -21,6 +22,35 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "com.example.agerasimenko.demoproject"
+        property "sonar.projectName", "Example"
+        property "sonar.projectVersion", "1.0"
+        property "sonar.host.url", "http://localhost:9000"
+
+        def buildPath = "${project.projectDir}/" + "build"
+
+        def javaPath = "${buildPath}/intermediates/classes"
+        def kotlinPath = "${buildPath}/tmp/kotlin-classes"
+
+        property "sonar.binaries", "${javaPath}/debug,${kotlinPath}/debug"
+        property "sonar.java.binaries", "${javaPath}/debug,${kotlinPath}/debug"
+        property "sonar.java.test.binaries", "${javaPath}/test,${kotlinPath}/debugUnitTest"
+
+        property "sonar.jacoco.reportPaths", "build/jacoco/testDebugUnitTest.exec"
+        property "sonar.junit.reportPaths", "build/test-results/testDebugUnitTest"
+        property "sonar.java.coveragePlugin", "jacoco"
+    }
+}
+
+
+task printSonarqubeProperty {
+    doLast {
+        println "${project.tasks['sonarqube'].properties['sonar.java.binaries']}"
     }
 }
 
