@@ -41,6 +41,8 @@ dependencies {
     implementation ProjectDependences.rxAndroid
     implementation ProjectDependences.stetho
     implementation ProjectDependences.stethoInterceptor
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
 }
 repositories {
     mavenCentral()

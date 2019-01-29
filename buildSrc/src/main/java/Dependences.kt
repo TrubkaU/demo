@@ -22,6 +22,7 @@ object ProjectDependences {
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
     const val stetho = "com.facebook.stetho:stetho-okhttp:${Versions.stetho}"
     const val stethoInterceptor = "com.facebook.stetho:stetho-okhttp3:${Versions.stethoInterceptor}"
+    const val lifecycleExtensions = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
 }
 
 
@@ -42,4 +43,5 @@ object Versions {
     const val rxAndroid = "2.0.2"
     const val stetho = "1.5.0"
     const val stethoInterceptor = "1.4.2"
+    const val lifecycle = "1.1.1"
 }
