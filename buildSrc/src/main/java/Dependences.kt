@@ -44,5 +44,5 @@ object Versions {
     const val rxAndroid = "2.0.2"
     const val stetho = "1.5.0"
     const val stethoInterceptor = "1.4.2"
-    const val jacoco = "0.8.2"
+    const val jacoco = "0.8.3"
 }
