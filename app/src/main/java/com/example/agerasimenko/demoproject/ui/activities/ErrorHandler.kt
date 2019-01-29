@@ -1,15 +1,22 @@
 package com.example.agerasimenko.demoproject.ui.activities
 
-import android.util.Log
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 
 
 interface ErrorHandler {
     fun handleError(throwable: Throwable)
+
+    fun getErrorMessage(): LiveData<String>
 }
 
 class ErrorHandlerImpl: ErrorHandler {
 
+    private val errorMessage = MutableLiveData<String>()
+
     override fun handleError(throwable: Throwable) {
-        Log.e("", throwable.message)
+        errorMessage.value = throwable.message
     }
+
+    override fun getErrorMessage(): LiveData<String> = errorMessage
 }
