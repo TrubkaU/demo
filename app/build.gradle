@@ -43,6 +43,8 @@ dependencies {
     implementation ProjectDependences.stethoInterceptor
 
     implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation ProjectDependences.recyclerView
+
 }
 repositories {
     mavenCentral()

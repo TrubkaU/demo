@@ -11,6 +11,7 @@ object ProjectDependences {
     const val applicationId = "com.example.agerasimenko.demoproject"
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val appCompatV7 = "com.android.support:appcompat-v7:${Versions.appCompatV7}"
+    const val recyclerView = "com.android.support:recyclerview-v7:${Versions.appCompatV7}"
     const val constrainLayout = "com.android.support.constraint:constraint-layout:${Versions.constrain}"
     const val junit = "junit:junit:${Versions.junit}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
