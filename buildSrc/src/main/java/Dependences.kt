@@ -34,8 +34,8 @@ object Versions {
     const val targetSdk =  27
     const val code = 1
     const val name = "1.0"
-    const val compileSdk = 27
-    const val appCompatV7 = "27.1.1"
+    const val compileSdk = 28
+    const val appCompatV7 = "28.0.0"
     const val constrain = "1.1.1"
     const val junit = "4.12"
     const val dagger = "2.15"
