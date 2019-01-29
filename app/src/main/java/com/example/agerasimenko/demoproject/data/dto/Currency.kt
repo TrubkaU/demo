@@ -2,6 +2,7 @@ package com.example.agerasimenko.demoproject.data.dto
 
 import com.google.gson.annotations.SerializedName
 
+@Generated
 data class Currency(
         @SerializedName("Cur_ID")val id: Int,
         @SerializedName("Cur_ParentID")val parentId: Int,
@@ -15,3 +16,5 @@ data class Currency(
         @SerializedName("Cur_DateStart")val dateStart: String,
         @SerializedName("Cur_DateEnd")val dateEnd: String
 )
+
+annotation class Generated
