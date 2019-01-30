@@ -1,6 +1,6 @@
 package com.example.agerasimenko.demoproject.ui.activities.adapter
 
-import android.arch.paging.PagedListAdapter
+import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import com.example.agerasimenko.demoproject.data.dto.CurrencyUI
 import kotlinx.android.synthetic.main.item_currency.view.*
 
 
-class CurrencyAdapter: PagedListAdapter<CurrencyUI, CurrencyHolder>(DIFF_CALLBACK) {
+class CurrencyAdapter: ListAdapter<CurrencyUI, CurrencyHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): CurrencyHolder {
         return LayoutInflater.from(parent.context)
