@@ -24,6 +24,6 @@ data class RangeCurrency(
         @SerializedName("Cur_OfficialRate")val rate: Float
 )
 
-fun RangeCurrency.toCurrencyUI() = CurrencyUI(date, rate)
+fun RangeCurrency.toCurrencyUI() = CurrencyUI(date.dropLast(10), rate)
 
 data class CurrencyUI(val date: String, val rate: Float)
