@@ -36,10 +36,10 @@ class MainActivityViewModel(private val currencyRepository: CurrencyRangeReposit
     }
 
     private fun handleCurrencyResult(currencies: List<CurrencyUI>) {
-        uiCurrencies.value
+        (uiCurrencies.value
                 ?.toMutableList()
                 ?.apply { addAll(currencies) }
-                ?: currencies
+                ?: currencies)
                 .let(uiCurrencies::setValue)
     }
 
