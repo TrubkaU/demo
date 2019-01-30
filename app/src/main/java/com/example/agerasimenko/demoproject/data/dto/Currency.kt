@@ -21,9 +21,9 @@ data class Currency(
 data class RangeCurrency(
         @SerializedName("Cur_ID")val id: Int,
         @SerializedName("Date")val date: String,
-        @SerializedName("Cur_OfficialRate")val rate: Int
+        @SerializedName("Cur_OfficialRate")val rate: Float
 )
 
 fun RangeCurrency.toCurrencyUI() = CurrencyUI(date, rate)
 
-data class CurrencyUI(val date: String, val rate: Int)
+data class CurrencyUI(val date: String, val rate: Float)
