@@ -1,28 +1,47 @@
 package com.example.agerasimenko.demoproject.ui.activities
 
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.util.Log
-import com.example.agerasimenko.demoproject.data.retrofit.ApiInterface
+import com.example.agerasimenko.demoproject.data.dto.CurrencyUI
+import com.example.agerasimenko.demoproject.data.repository.CurrencyRangeRepository
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 
-
-class MainActivityViewModel(private val aptService: ApiInterface):
+class MainActivityViewModel(private val currencyRepository: CurrencyRangeRepository):
         ViewModel(), ErrorHandler by ErrorHandlerImpl() {
 
     private val disposables = CompositeDisposable()
+    private val uiCurrencies  =  MutableLiveData<List<CurrencyUI>>()
 
-    fun readCurrency() {
-        aptService.allCurrencies()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe ({ currencies ->
-                    Log.d("Currency", currencies.size.toString())
-                }, ::handleError) .let(disposables::add)
+
+    fun getFirst() {
+        handleRangeCurrency(currencyRepository.getFirstRange())
     }
 
+    fun getNext() {
+        uiCurrencies.value?.last()?.date
+                ?.let {
+                    handleRangeCurrency(currencyRepository.getRangeFromTo(it))
+                }
+    }
 
+    fun getCurrencies(): LiveData<List<CurrencyUI>> = uiCurrencies
+
+    private fun handleRangeCurrency(single: Single<List<CurrencyUI>>) {
+        single.observeOn(AndroidSchedulers.mainThread())
+                .subscribe (::handleCurrencyResult, ::handleError)
+                .let(disposables::add)
+    }
+
+    private fun handleCurrencyResult(currencies: List<CurrencyUI>) {
+        uiCurrencies.value
+                ?.toMutableList()
+                ?.apply { addAll(currencies) }
+                ?: currencies
+                .let(uiCurrencies::setValue)
+    }
 
     override fun onCleared() {
         super.onCleared()
@@ -30,8 +49,8 @@ class MainActivityViewModel(private val aptService: ApiInterface):
     }
 }
 
-class MainActivityViewModelFactory (private val aptService: ApiInterface):
+class MainActivityViewModelFactory (private val currencyRepository: CurrencyRangeRepository):
         BaseViewModelFactory<MainActivityViewModel>(MainActivityViewModel::class.java) {
 
-    override fun createViewModel() = MainActivityViewModel(aptService)
+    override fun createViewModel() = MainActivityViewModel(currencyRepository)
 }

@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setCurrenciesToList(currencies: PagedList<CurrencyUI>?) {
+    private fun setCurrenciesToList(currencies: List<CurrencyUI>?) {
         currencies?.let {
             (currencyList.adapter as CurrencyAdapter).submitList(it)
         }
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             ViewModelProviders.of(this, factory)
                     .get(MainActivityViewModel::class.java)
                     .apply {
-                        uiCurrencies.observe(this@MainActivity, Observer(::setCurrenciesToList))
+                        getCurrencies().observe(this@MainActivity, Observer(::setCurrenciesToList))
                         handleErrorMessage(getErrorMessage())
                     }
 }
