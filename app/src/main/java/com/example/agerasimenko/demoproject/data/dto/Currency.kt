@@ -3,6 +3,7 @@ package com.example.agerasimenko.demoproject.data.dto
 import android.support.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class Currency(
         @SerializedName("Cur_ID")val id: Int,
         @SerializedName("Cur_ParentID")val parentId: Int,
