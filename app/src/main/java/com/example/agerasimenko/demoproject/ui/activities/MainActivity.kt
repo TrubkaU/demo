@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCurrenciesToList(currencies: List<CurrencyUI>?) {
         currencies?.let {
+            currencySwipe.isRefreshing = false
             (currencyList.adapter as CurrencyAdapter).submitList(it)
         }
     }
