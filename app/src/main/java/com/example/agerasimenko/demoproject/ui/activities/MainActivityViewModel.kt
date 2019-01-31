@@ -5,6 +5,7 @@ import android.arch.lifecycle.MutableLiveData
 import com.example.agerasimenko.demoproject.data.dto.CurrencyUI
 import com.example.agerasimenko.demoproject.data.repository.CurrencyRangeRepository
 import com.example.agerasimenko.demoproject.ui.base.BaseViewModel
+import com.example.agerasimenko.demoproject.ui.base.BaseViewModelFactory
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

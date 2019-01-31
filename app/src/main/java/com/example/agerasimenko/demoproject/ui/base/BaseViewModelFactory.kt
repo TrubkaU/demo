@@ -1,4 +1,4 @@
-package com.example.agerasimenko.demoproject.ui.activities
+package com.example.agerasimenko.demoproject.ui.base
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
