@@ -28,9 +28,10 @@ class MainActivityViewModel(private val currencyRepository: CurrencyRangeReposit
 
     fun getCurrencies(): LiveData<List<CurrencyUI>> = uiCurrencies
 
-    private fun handleRangeCurrency(single: Single<List<CurrencyUI>>) {
+    private fun handleRangeCurrency(single: Single<List<CurrencyUI>>, onResult:(currencies: List<CurrencyUI>) -> Unit) {
         single.observeOn(AndroidSchedulers.mainThread())
-                .subscribe (::handleCurrencyResult, ::handleError)
+                .let(::setupProgressShow)
+                .subscribe(onResult, ::handleError)
                 .let(disposables::add)
     }
 

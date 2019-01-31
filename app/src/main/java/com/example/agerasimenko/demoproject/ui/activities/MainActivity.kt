@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCurrenciesToList(currencies: List<CurrencyUI>?) {
         currencies?.let {
-            currencySwipe.isRefreshing = false
             (currencyList.adapter as CurrencyAdapter).submitList(it)
         }
     }
@@ -51,6 +50,14 @@ class MainActivity : AppCompatActivity() {
                     .get(MainActivityViewModel::class.java)
                     .apply {
                         getCurrencies().observe(this@MainActivity, Observer(::setCurrenciesToList))
+                        progressBarVisibility().observe(this@MainActivity, Observer {
+                            it?.let(::setProgressBarVisible)
+                        })
+                        getFirst()
                         handleErrorMessage(getErrorMessage())
                     }
+
+    private fun setProgressBarVisible(visibility: Boolean) {
+        currencySwipe.isRefreshing = visibility
+    }
 }
