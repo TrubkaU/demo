@@ -37,6 +37,7 @@ class MainActivityViewModel(private val currencyRepository: CurrencyRangeReposit
     private fun handleRangeCurrency(single: Single<List<CurrencyUI>>, onResult:(currencies: List<CurrencyUI>) -> Unit) {
         single.observeOn(AndroidSchedulers.mainThread())
                 .let(::setupProgressShow)
+                .map { it.reversed() }
                 .subscribe(onResult, ::handleError)
                 .let(disposables::add)
     }
