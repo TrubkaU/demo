@@ -2,7 +2,6 @@ package com.example.agerasimenko.demoproject.ui.activities
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.arch.paging.PagedList
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -26,12 +25,10 @@ class MainActivity : AppCompatActivity() {
         (application as MainApp).getApplicationComponent().inject(this)
 
         getViewModel().let { viewModel ->
-            read.setOnClickListener {
+            currencySwipe.setOnRefreshListener {
                 viewModel.getFirst()
             }
-            currencySwipe.setOnRefreshListener {
-                viewModel.getNext()
-            }
+            viewModel.getFirst()
         }
     }
 
