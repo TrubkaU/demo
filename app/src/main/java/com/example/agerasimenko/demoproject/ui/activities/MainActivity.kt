@@ -9,6 +9,7 @@ import com.example.agerasimenko.demoproject.MainApp
 import com.example.agerasimenko.demoproject.R
 import com.example.agerasimenko.demoproject.data.dto.CurrencyUI
 import com.example.agerasimenko.demoproject.ui.activities.adapter.CurrencyAdapter
+import com.example.agerasimenko.demoproject.ui.activities.adapter.EndScrollListener
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -17,25 +18,29 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: MainActivityViewModelFactory
 
+    private lateinit var viewModel: MainActivityViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initCurrencyList()
-
         (application as MainApp).getApplicationComponent().inject(this)
 
-        getViewModel().let { viewModel ->
-            currencySwipe.setOnRefreshListener {
-                viewModel.getFirst()
-            }
-            viewModel.getFirst()
-        }
+        initCurrencyList()
+
+        viewModel = getViewModel()
     }
 
     private fun initCurrencyList() {
         currencyList.run {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = CurrencyAdapter()
+
+            currencySwipe.setOnRefreshListener {
+                viewModel.getFirst()
+            }
+            addOnScrollListener(EndScrollListener(layoutManager as LinearLayoutManager) {
+                viewModel.getNext()
+            })
         }
     }
 
