@@ -16,14 +16,19 @@ class MainActivityViewModel(private val currencyRepository: CurrencyRangeReposit
 
 
     fun getFirst() {
-        handleRangeCurrency(currencyRepository.getFirstRange())
+        handleRangeCurrency(currencyRepository.getFirstRange()) { newCurrencies ->
+            uiCurrencies.value = newCurrencies
+        }
     }
 
     fun getNext() {
-        uiCurrencies.value?.last()?.date
-                ?.let {
-                    handleRangeCurrency(currencyRepository.getRangeFromTo(it))
-                }
+        uiCurrencies.value?.toMutableList()?.let { currentCurrencies ->
+            val lastItemDate = currentCurrencies.last().date
+            handleRangeCurrency(currencyRepository.getRangeFromTo(lastItemDate)) { newCurrencies ->
+                currentCurrencies.addAll(newCurrencies)
+                uiCurrencies.value = currentCurrencies
+            }
+        }
     }
 
     fun getCurrencies(): LiveData<List<CurrencyUI>> = uiCurrencies
@@ -33,14 +38,6 @@ class MainActivityViewModel(private val currencyRepository: CurrencyRangeReposit
                 .let(::setupProgressShow)
                 .subscribe(onResult, ::handleError)
                 .let(disposables::add)
-    }
-
-    private fun handleCurrencyResult(currencies: List<CurrencyUI>) {
-        (uiCurrencies.value
-                ?.toMutableList()
-                ?.apply { addAll(currencies) }
-                ?: currencies)
-                .let(uiCurrencies::setValue)
     }
 
     override fun onCleared() {
